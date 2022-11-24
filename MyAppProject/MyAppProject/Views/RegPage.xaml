@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:myappproject="clr-namespace:MyAppProject" x:DataType="myappproject:AppShell"
+             x:Class="MyAppProject.Views.RegPage"
+             BackgroundColor="#818589"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             >
+
+
+    <ContentPage.Content>
+        <StackLayout Padding="100" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image Source="usw_logo.jpg" WidthRequest="200"/>
+            <Label Text="Register Account&#10;" TextColor="White" FontSize="20"/>
+            <Label Text="Username:" TextColor="White"/>
+            <Entry Placeholder="Username" />
+            <Label Text="Password:" TextColor="White" />
+            <Entry Placeholder="Password"/>
+            <Button Text="Register" Clicked="Button_Clicked" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

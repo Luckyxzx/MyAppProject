@@ -2,13 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              mc:Ignorable="d"
              x:Class="MyAppProject.Views.LoginPage"
-             Shell.NavBarIsVisible="False">
-    <ContentPage.Content>
-        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
-        </StackLayout>
-    </ContentPage.Content>
+             BackgroundColor="#818589"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             >
+
+    <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+        <Image Source="usw_logo.jpg" WidthRequest="200"/>
+        <Label x:Name="Lab_User"  Text="Username:"/>
+        <Entry x:Name="En_User" Placeholder="Username"/>
+        <Label x:Name="Lab_Pass" Text="Password:"/>
+        <Entry x:Name="En_Pass" Placeholder="Password"/>
+        <Button x:Name="Bt_Signin" Text="Sign In" Clicked="SignInButton"/>
+        <Label Text="Register" HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+    </StackLayout>
+
 </ContentPage>

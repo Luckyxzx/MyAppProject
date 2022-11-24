@@ -634,3 +634,4 @@ D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\stamp\_Con
 D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
+D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\res\drawable\usw_logo.png

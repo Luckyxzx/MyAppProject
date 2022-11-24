@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="MyAppProject.Views.FrontPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:MyAppProject.ViewModels" 
+             x:DataType="viewmodels:FrontPageVM"
+             BackgroundColor="#000">
+            <ContentPage.BindingContext>
+                <viewmodels:FrontPageVM/>
+            </ContentPage.BindingContext>
+ 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Text">#FFFF</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="100" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image Source="usw_logo.jpg" WidthRequest="200"/>
+            <Label Text="University Of SouthWales Science" FontSize="Large" TextColor="Red"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>
