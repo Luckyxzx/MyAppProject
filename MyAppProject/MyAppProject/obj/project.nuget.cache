@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "1caKGufmGmVS9J9Ue/t/eMN09GOdeKBh6zimb00G2u1LOEQozOyPEscAEdN7DDBye5cJQzHLu2cYtbYm7tOahw==",
+  "dgSpecHash": "+ku2NCrVCk/Rt1jx7HLbL0EY689JlL9vLeXdlo9lbNN4MDsXFRkqD8PMLbwVTZor/mseRYuMHU/ES2OHpCS3Ig==",
   "success": true,
   "projectFilePath": "D:\\Repos\\MyAppProject\\MyAppProject\\MyAppProject\\MyAppProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FiercePC\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\FiercePC\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\FiercePC\\.nuget\\packages\\refractored.mvvmhelpers\\1.6.2\\refractored.mvvmhelpers.1.6.2.nupkg.sha512",
     "C:\\Users\\FiercePC\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\FiercePC\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\FiercePC\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+    "C:\\Users\\FiercePC\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\FiercePC\\.nuget\\packages\\xamarin.essentials\\1.7.3\\xamarin.essentials.1.7.3.nupkg.sha512",
+    "C:\\Users\\FiercePC\\.nuget\\packages\\xamarin.forms\\5.0.0.2515\\xamarin.forms.5.0.0.2515.nupkg.sha512"
   ],
   "logs": []
 }

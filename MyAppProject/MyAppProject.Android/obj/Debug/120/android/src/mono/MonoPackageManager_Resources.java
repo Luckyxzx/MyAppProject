@@ -4,6 +4,7 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "MyAppProject.Android.dll" comes first in this list. */
 		"MyAppProject.Android.dll",
 		"FormsViewGroup.dll",
+		"MvvmHelpers.dll",
 		"MyAppProject.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",

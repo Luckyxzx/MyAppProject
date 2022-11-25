@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:MvvmHelpers;assembly=MvvmHelpers"
+             xmlns:models="clr-namespace:MyAppProject.Models"
+             xmlns:viewmodels="clr-namespace:MyAppProject.ViewModels"
+             x:Class="MyAppProject.Views.Timetable"
+             BackgroundColor="Black">
+
+    <ContentPage.BindingContext>
+        <viewmodels:TimetableVM/>
+    </ContentPage.BindingContext>
+
+    <ListView BackgroundColor="Transparent" 
+              ItemsSource="{Binding Timetable}" 
+              HasUnevenRows="True" 
+              SeparatorVisibility="None"
+              
+              >
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="10">
+                        <Frame CornerRadius="20" HasShadow="True">
+                            <StackLayout>
+                                <Image Source="{Binding Image}"/>
+                                <StackLayout>
+                                    <Label VerticalOptions="Center"
+                                           FontSize="Large"
+                                           Text="{Binding Name}"/>
+                                    <Label VerticalOptions="Center"
+                                           FontSize="Large"
+                                           Text="{Binding TimeDate}"/>
+                                    <Label VerticalOptions="Center"
+                                           FontSize="Large"
+                                           Text="{Binding Room}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        
+    </ListView>
+
+
+
+
+
+
+</ContentPage>

@@ -16,3 +16,4 @@ D:\Repos\MyAppProject\MyAppProject\MyAppProject\obj\Debug\netstandard2.0\ref\MyA
 D:\Repos\MyAppProject\MyAppProject\MyAppProject\obj\Debug\netstandard2.0\Views\FrontPage.xaml.g.cs
 D:\Repos\MyAppProject\MyAppProject\MyAppProject\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
 D:\Repos\MyAppProject\MyAppProject\MyAppProject\obj\Debug\netstandard2.0\Views\RegPage.xaml.g.cs
+D:\Repos\MyAppProject\MyAppProject\MyAppProject\obj\Debug\netstandard2.0\Views\Timetable.xaml.g.cs

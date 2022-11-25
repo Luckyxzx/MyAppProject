@@ -1,4 +1,5 @@
 ﻿//Libs
+//MvvmHelpers is created by James Montemagno https://www.nuget.org/packages/Refractored.MvvmHelpers
 using MyAppProject.Models;
 using MyAppProject.ViewModels;
 using System;

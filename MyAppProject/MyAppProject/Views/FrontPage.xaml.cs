@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MvvmHelpers.Commands;
 
 namespace MyAppProject.Views
 {
@@ -19,10 +20,7 @@ namespace MyAppProject.Views
 
         }
 
-        private async void ToolbarItem_Clicked(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
-        }
+        private async void ToolbarItem_Clicked(object sender, EventArgs e) => await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
 
 
     }

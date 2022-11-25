@@ -87,10 +87,8 @@
         <ShellContent Route="FrontPage" ContentTemplate="{DataTemplate local:FrontPage}" />
     </FlyoutItem>
 
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="RegPage"
-                      Route="RegPage"
-                      ContentTemplate="{DataTemplate local:RegPage}"/>
+    <FlyoutItem Title="Timetable" Icon="icon_about.png">
+        <ShellContent Route="Timetable" ContentTemplate="{DataTemplate local:Timetable}" />
     </FlyoutItem>
 
 </Shell>

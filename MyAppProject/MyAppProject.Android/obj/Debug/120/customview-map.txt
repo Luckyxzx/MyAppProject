@@ -14,6 +14,7 @@ background;obj\Debug\120\res\mipmap-anydpi-v26\icon.xml
 background;obj\Debug\120\res\mipmap-anydpi-v26\icon_round.xml
 cache-path;D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 color;obj\Debug\120\res\values\colors.xml
+color;obj\Debug\120\res\values\styles.xml
 com.google.android.material.appbar.AppBarLayout;D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\lp\54\jl\res\layout\flyoutcontent.xml
 com.google.android.material.appbar.AppBarLayout;D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\lp\54\jl\res\layout\rootlayout.xml
 com.google.android.material.appbar.AppBarLayout;D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\lp\54\jl\res\layout\shellcontent.xml
@@ -28,6 +29,7 @@ foreground;obj\Debug\120\res\mipmap-anydpi-v26\icon.xml
 foreground;obj\Debug\120\res\mipmap-anydpi-v26\icon_round.xml
 FrameLayout;D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\lp\54\jl\res\layout\bottomtablayout.xml
 item;D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\lp\54\jl\res\values\styles.xml
+item;obj\Debug\120\res\values\styles.xml
 LinearLayout;D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\lp\54\jl\res\layout\bottomtablayout.xml
 paths;D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\lp\53\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 resources;D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\lp\54\jl\res\values\attrs.xml
