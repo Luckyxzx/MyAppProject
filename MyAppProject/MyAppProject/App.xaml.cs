@@ -8,7 +8,8 @@ namespace MyAppProject
         public App()
         {
             InitializeComponent();
-
+            //because media element is still in early phase this command is required as a safe point when using.
+            Device.SetFlags(new[] { "MediaElement_Experimental", "Brush_Experimental" });
             MainPage = new AppShell();
         }
 

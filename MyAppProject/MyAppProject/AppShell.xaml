@@ -2,8 +2,16 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:MyAppProject.Views"
+       xmlns:views="clr-namespace:MyAppProject.Views" xmlns:myappproject="clr-namespace:MyAppProject" x:DataType="myappproject:AppShell"
        Title="MyAppProject"
-       x:Class="MyAppProject.AppShell">
+       xmlns:sys="clr-namespace:System;assembly=netstandard"
+       x:Name="Shell"
+       x:Class="MyAppProject.AppShell"
+       FlyoutBackgroundImage="FlyoutBack.png"
+       FlyoutBackgroundImageAspect="AspectFill"
+       FlyoutHeaderBehavior="CollapseOnScroll"
+       >
+
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -73,22 +81,106 @@
         </ResourceDictionary>
     </Shell.Resources>
 
+
     <!-- 
         When the Flyout is visible this defines the content to display in the flyout.
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
+    <!--
+        Set Login page route disable flyout and give it prio so it always appear first before anything
+    
+        Created a flyout which contains multiple items which are pages
+    
+        Created a flyout header which shows a image of the usw logo
+    -->
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="Transparent"
+                  HeightRequest="150"
+                  >
+                <Image Aspect="AspectFit"
+                       Source="usw_logo.png"
+                       Opacity="0.7"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
 
     <ShellItem Route="LoginPage" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
     </ShellItem>
 
-    <FlyoutItem Title="Main" Icon="icon_about.png">
-        <ShellContent Route="FrontPage" ContentTemplate="{DataTemplate local:FrontPage}" />
+    <ShellItem Route="RegPage" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:RegPage}"/>
+    </ShellItem>
+
+    <FlyoutItem 
+                FlyoutDisplayOptions="AsMultipleItems">
+        <Shell.FlyoutBackdrop>
+            <LinearGradientBrush StartPoint="0,0"
+                               EndPoint="1,1">
+                <GradientStop Color="#abd4d6"
+                            Offset="0.1" />
+                <GradientStop Color="#f5b0a9"
+                            Offset="0.6" />
+                <GradientStop Color="#fd7a80"
+                            Offset="1.0" />
+            </LinearGradientBrush>
+        </Shell.FlyoutBackdrop>
+
+        <ShellContent Title="Main"
+                      Route="FrontPage"
+                      Icon="icon_about.png"
+                      ContentTemplate="{DataTemplate views:FrontPage}"/>
+
     </FlyoutItem>
 
-    <FlyoutItem Title="Timetable" Icon="icon_about.png">
-        <ShellContent Route="Timetable" ContentTemplate="{DataTemplate local:Timetable}" />
+    <FlyoutItem 
+                FlyoutDisplayOptions="AsMultipleItems">
+        <Shell.FlyoutBackdrop>
+            <LinearGradientBrush StartPoint="0,0"
+                               EndPoint="1,1">
+                <GradientStop Color="#abd4d6"
+                            Offset="0.1" />
+                <GradientStop Color="#f5b0a9"
+                            Offset="0.6" />
+                <GradientStop Color="#fd7a80"
+                            Offset="1.0" />
+            </LinearGradientBrush>
+        </Shell.FlyoutBackdrop>
+
+        <ShellContent Title="Timetable"
+                      Route="Timetable"
+                      Icon="icon_about.png"
+                      ContentTemplate="{DataTemplate views:Timetable}"/>
+
     </FlyoutItem>
 
+    <MenuItem Text="About"
+              IconImageSource="about.png"
+              Command="{Binding AboutCommand}"
+              CommandParameter="https://www.southwales.ac.uk/about" />
+
+    <MenuItem Text="Help"
+              IconImageSource="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://advice.southwales.ac.uk/a2z/support-services" />
+
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <StackLayout>
+                <Label Text="USW"
+                       Style="{DynamicResource BaseStyle}"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+                <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+                       TextColor="Black"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+    
 </Shell>

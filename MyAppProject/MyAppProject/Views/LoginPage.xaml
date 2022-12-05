@@ -5,23 +5,38 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              mc:Ignorable="d"
              x:Class="MyAppProject.Views.LoginPage"
-             BackgroundColor="#818589"
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="False"
              >
 
-    <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="10">
-        <Image Source="usw_logo.jpg" WidthRequest="500" />
-        <Label x:Name="Lab_User"  Text="Username/Email:" FontSize="Title"/>
-        <Entry x:Name="En_User" Placeholder="Username"/>
-        <Label x:Name="Lab_Pass" Text="Password:" FontSize="Title"/>
-        <Entry x:Name="En_Pass" Placeholder="Password"/>
-        <Button x:Name="Bt_Signin" Text="Sign In" Clicked="SignInButton"/>
-        <Label Text="Register" HorizontalOptions="Center">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+    <Grid>
+        <BoxView>
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="#acd4d6"
+                                  Offset="0"/>
+                    <GradientStop Color="#f5b0a9"
+                                  Offset="0.9"/>
+                    <GradientStop Color="#fd7a80"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+        <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="10">
+            <Image Source="usw_logo.jpg" WidthRequest="500" />
+            <Label x:Name="Lab_User"  Text="Username/Email:" FontSize="Title"/>
+            <Entry x:Name="En_User" Placeholder="Username"/>
+            <Label x:Name="Lab_Pass" Text="Password:" FontSize="Title"/>
+            <Entry x:Name="En_Pass" Placeholder="Password"/>
+            <Button x:Name="Bt_Signin" Text="Sign In" Clicked="SignInButton"/>
+            <Label Text="Register" HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
-    </StackLayout>
+        </StackLayout>
+    </Grid>
+    
+
 
 </ContentPage>

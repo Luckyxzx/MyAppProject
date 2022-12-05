@@ -4,36 +4,43 @@
              xmlns:mvvm="clr-namespace:MvvmHelpers;assembly=MvvmHelpers"
              xmlns:models="clr-namespace:MyAppProject.Models"
              xmlns:viewmodels="clr-namespace:MyAppProject.ViewModels"
-             x:Class="MyAppProject.Views.Timetable"
-             BackgroundColor="Black">
+             x:Class="MyAppProject.Views.Timetable">
 
     <ContentPage.BindingContext>
         <viewmodels:TimetableVM/>
     </ContentPage.BindingContext>
 
-    <ListView BackgroundColor="Transparent" 
-              ItemsSource="{Binding Timetable}" 
-              HasUnevenRows="True" 
-              SeparatorVisibility="None"
-              
-              >
-
+    <ListView
+        ItemsSource="{Binding Timetable}" 
+        HasUnevenRows="True" 
+        SeparatorVisibility="None"
+        SelectionMode="None"
+        BackgroundColor="Black"
+        >
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <Grid Padding="10">
-                        <Frame CornerRadius="20" HasShadow="True">
+                    <Grid Padding="20">
+
+                        <Frame CornerRadius="5" HasShadow="True">
                             <StackLayout>
                                 <Image Source="{Binding Image}"/>
                                 <StackLayout>
                                     <Label VerticalOptions="Center"
                                            FontSize="Large"
+                                           TextColor="Black"
                                            Text="{Binding Name}"/>
                                     <Label VerticalOptions="Center"
                                            FontSize="Large"
+                                           TextColor="Red"
                                            Text="{Binding TimeDate}"/>
                                     <Label VerticalOptions="Center"
                                            FontSize="Large"
+                                           TextColor="Black"
+                                           Text="{Binding Lecturer}"/>
+                                    <Label VerticalOptions="Center"
+                                           FontSize="Large"
+                                           TextColor="Black"
                                            Text="{Binding Room}"/>
                                 </StackLayout>
                             </StackLayout>

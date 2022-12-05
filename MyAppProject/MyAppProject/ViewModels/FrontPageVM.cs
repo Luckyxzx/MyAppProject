@@ -1,46 +1,47 @@
-﻿using MvvmHelpers;
+﻿//MvvmHelpers is created by James Montemagno https://www.nuget.org/packages/Refractored.MvvmHelpers
+using MvvmHelpers;
 using MvvmHelpers.Commands;
+using MyAppProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using static MyAppProject.ViewModels.FrontPageVM;
 using Command = MvvmHelpers.Commands.Command;
 
 namespace MyAppProject.ViewModels
 {
-    public class FrontPageVM : BaseViewModel
+    //MVMMHelper  sets to inherit from VMBase which it inherits from BaseViewModel
+    public class FrontPageVM : VMBase
     {
+
         public FrontPageVM()
         {
-            //implement increasecount as command (onincrease)
-            IncreaseCount = new Command(OnIncrease);
-            //bindable property that will auto work inside app with the help of mvmmhelpers
-            Title = "Front Page";
+            Onboardings = GetOnboarding();
         }
 
-        //defines a command
-        public ICommand IncreaseCount { get; }
+        public List<Onboarding> Onboardings { get; set; }
 
-        //int
-        int count = 0;
-        //string
-        string countDisplay = "Click Me!!";
-        //gets countdisplay and sets the property 
-        public string CountDisplay
+        private List<Onboarding> GetOnboarding()
         {
-            get => countDisplay;
-            //set the property reference to countdisplay and pass in the value. Handles it all auto
-            set => SetProperty(ref countDisplay, value);
+            return new List<Onboarding>
+            {
+                new Onboarding { Heading = "USW Daily News", Caption = "Community Event on the 05/12/2022 attendance would be great" },
+                new Onboarding { Heading = "Heavy Rain", Caption = "During next week starting MOnday 05/12/2022 expect heavy rain throughout" },
+                new Onboarding { Heading = "Assignment Due", Caption = "Please students remember to hand in their assignments thats due on the 15th of December" }
+            };
         }
 
-        //increase the count when the button is pressed and prints messaged with countdisplay
-        void OnIncrease()
+        public class Onboarding
         {
-            count++;
-            CountDisplay = $"You clicked {count} time(s)";
+            public string Heading { get; set; }
+
+            public string Caption { get; set; }
         }
+
     }
 }

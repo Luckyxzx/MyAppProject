@@ -1,22 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:myappproject="clr-namespace:MyAppProject" x:DataType="myappproject:AppShell"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:myappproject="clr-namespace:MyAppProject" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:DataType="myappproject:AppShell"
              x:Class="MyAppProject.Views.RegPage"
-             BackgroundColor="#818589"
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="False"
              >
 
 
-    <ContentPage.Content>
+    <Grid>
+        <BoxView>
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="#acd4d6"
+                                  Offset="0"/>
+                    <GradientStop Color="#f5b0a9"
+                                  Offset="0.9"/>
+                    <GradientStop Color="#fd7a80"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+
         <StackLayout Padding="100" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
             <Image Source="usw_logo.jpg" WidthRequest="200"/>
             <Label Text="Register Account&#10;" TextColor="White" FontSize="20"/>
-            <Label Text="Username:" TextColor="White"/>
+            <Label Text="Username:" TextColor="Black"/>
             <Entry Placeholder="Username" />
-            <Label Text="Password:" TextColor="White" />
+            <Label Text="Password:" TextColor="Black" />
             <Entry Placeholder="Password"/>
             <Button Text="Register" Clicked="Button_Clicked" TextColor="White"/>
         </StackLayout>
-    </ContentPage.Content>
+
+
+    </Grid>
+
+
+
+
+
 </ContentPage>

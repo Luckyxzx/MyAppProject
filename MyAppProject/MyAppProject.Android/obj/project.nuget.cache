@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gxJppfdlhlc3Tph2e5USsx2I9KWRjdeteWh5GHZmTznHklQdeg/ViqzoS5e15GnskP8zm4zz9ZwSeEySlLmIYw==",
+  "dgSpecHash": "qxYJTZwdu3jtnPM7RA1FGt83m1UySb2BCeTogMGzJ50C+ZuUSLreTgnnmdJh7OPZGoWVv6pY8DefcQ0wSdALhA==",
   "success": true,
   "projectFilePath": "D:\\Repos\\MyAppProject\\MyAppProject\\MyAppProject.Android\\MyAppProject.Android.csproj",
   "expectedPackageFiles": [
@@ -60,6 +60,7 @@
     "C:\\Users\\FiercePC\\.nuget\\packages\\xamarin.androidx.versionedparcelable\\1.1.1.8\\xamarin.androidx.versionedparcelable.1.1.1.8.nupkg.sha512",
     "C:\\Users\\FiercePC\\.nuget\\packages\\xamarin.androidx.viewpager\\1.0.0.8\\xamarin.androidx.viewpager.1.0.0.8.nupkg.sha512",
     "C:\\Users\\FiercePC\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.10\\xamarin.androidx.viewpager2.1.0.0.10.nupkg.sha512",
+    "C:\\Users\\FiercePC\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.5\\xamarin.communitytoolkit.2.0.5.nupkg.sha512",
     "C:\\Users\\FiercePC\\.nuget\\packages\\xamarin.essentials\\1.7.3\\xamarin.essentials.1.7.3.nupkg.sha512",
     "C:\\Users\\FiercePC\\.nuget\\packages\\xamarin.forms\\5.0.0.2515\\xamarin.forms.5.0.0.2515.nupkg.sha512",
     "C:\\Users\\FiercePC\\.nuget\\packages\\xamarin.google.android.material\\1.4.0.2\\xamarin.google.android.material.1.4.0.2.nupkg.sha512",

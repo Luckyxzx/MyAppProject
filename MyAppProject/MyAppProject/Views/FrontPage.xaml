@@ -2,29 +2,64 @@
 <ContentPage x:Class="MyAppProject.Views.FrontPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:mvvm="clr-namespace:MvvmHelpers;assembly=MvvmHelpers"
+             xmlns:models="clr-namespace:MyAppProject.Models"
              xmlns:viewmodels="clr-namespace:MyAppProject.ViewModels" 
-             x:DataType="viewmodels:FrontPageVM"
-             BackgroundColor="#000">
-            <ContentPage.BindingContext>
-                <viewmodels:FrontPageVM/>
-            </ContentPage.BindingContext>
- 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Text">#FFFF</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:local="http://xamarin.com/schemas/2020/toolkit"
+             BackgroundColor="White"
+             >
+    <ContentPage.BindingContext>
+        <viewmodels:FrontPageVM/>
+    </ContentPage.BindingContext>
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Logout" Clicked="ToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
 
-    <ContentPage.Content>
-        <StackLayout Padding="100" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
-            <Image Source="usw_logo.jpg" WidthRequest="200"/>
-            <Label Text="University Of SouthWales Science" FontSize="Large" TextColor="Red"/>
-        </StackLayout>
-    </ContentPage.Content>
+
+
+    <Grid>
+        <xct:MediaElement Source="ms-appx:///backgroundvideo.mp4" 
+                      ShowsPlaybackControls="False"
+                      IsLooping="True" 
+                      Aspect="AspectFill" 
+                      AutoPlay="True" 
+                      VerticalOptions="FillAndExpand" 
+                      HorizontalOptions="FillAndExpand"/>
+
+        <BoxView>
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="Transparent"
+                                  Offset="0"/>
+                    <GradientStop Color="#f5b0a9"
+                                  Offset="0.9"/>
+                    <GradientStop Color="#fd7a80"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+
+        <Grid RowDefinitions="Auto, Auto, Auto" HeightRequest="220" Margin="30,30,30,100" RowSpacing="20" VerticalOptions="End">
+            <CarouselView x:Name="cvOnboarding" IndicatorView="LandingIndicator" ItemsSource="{Binding Onboardings}" VerticalOptions="End">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Spacing="10">
+                            <Label Text="{Binding Heading}" TextColor="Black" FontSize="25" FontAttributes="Bold" WidthRequest="250" HorizontalOptions="Start"/>
+                            <Label Text="{Binding Caption}" TextColor="WhiteSmoke" FontSize="15" WidthRequest="250" HorizontalOptions="Start"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView x:Name="LandingIndicator" Grid.Row="1" IndicatorsShape="Circle" IndicatorColor="White" SelectedIndicatorColor="Gray"/>
+        </Grid>
+        
+        
+
+    </Grid>
+
 
 
 </ContentPage>
