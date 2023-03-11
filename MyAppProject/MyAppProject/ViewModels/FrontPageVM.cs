@@ -31,8 +31,8 @@ namespace MyAppProject.ViewModels
             return new List<Onboarding>
             {
                 new Onboarding { Heading = "USW Daily News", Caption = "Community Event on the 05/12/2022 attendance would be great" },
-                new Onboarding { Heading = "Heavy Rain", Caption = "During next week starting MOnday 05/12/2022 expect heavy rain throughout" },
-                new Onboarding { Heading = "Assignment Due", Caption = "Please students remember to hand in their assignments thats due on the 15th of December" }
+                new Onboarding { Heading = "Heavy Rain", Caption = "During next week starting Monday 05/12/2022 expect heavy rain throughout" },
+                new Onboarding { Heading = "Assignment Due", Caption = "Please remember students, to hand in their assignments thats due on the 15th of December for CS03032" }
             };
         }
 

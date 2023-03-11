@@ -2,6 +2,7 @@
 using MvvmHelpers;
 using MvvmHelpers.Commands;
 using MyAppProject.Models;
+using MyAppProject.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,27 +22,41 @@ namespace MyAppProject.ViewModels
         public ObservableRangeCollection<Timetable> Timetable { get; set; }
         //have a list of lists
         public ObservableRangeCollection<Grouping<string, Timetable>> TimetableGroups { get; }
-
         //pulls data and wait 2 sec async
         public AsyncCommand RefreshCommand { get; }
+        //
+        public AsyncCommand AddCommand { get; }
+        //
+        public AsyncCommand<Timetable> RemoveCommand { get; }  
 
         public TimetableVM()
         {
             //title
-            Title = "Timetable";
+            Title = "The Timetable";
 
             Timetable = new ObservableRangeCollection<Timetable>();
             TimetableGroups = new ObservableRangeCollection<Grouping<string, Timetable>>();
 
-            //sets image to the usw logo
-            var image = "usw_logo.png";
-            //adding content to the timetable
-            Timetable.Add(new Timetable { Name = "Game Engine Design", TimeDate = "MON 9:00-11:00 & 13:00-15:00", Room = "J202", Lecturer = "Carl Jones & Alun King", Image = image });
-            Timetable.Add(new Timetable { Name = "Parallel Programming", TimeDate = "MON 15:00-17:00 & THU 9:00-11:00", Room = "J208", Lecturer = "Simon Payne", Image = image });
-            Timetable.Add(new Timetable { Name = "Individual Project", TimeDate = "WED 9:00-10:00, 10:30-11:30", Room = "G303", Lecturer = "Carl Jones",  Image = image });
-
             //creates a new async command that refresh
             RefreshCommand = new AsyncCommand(Refresh);
+            AddCommand = new AsyncCommand(Add);
+            RemoveCommand = new AsyncCommand<Timetable>(Remove);
+        }
+
+        async Task Add()
+        {
+            var name = await App.Current.MainPage.DisplayPromptAsync("Name", "Name");
+            var timedate = await App.Current.MainPage.DisplayPromptAsync("TimeDate", "TimeDate");
+            var room = await App.Current.MainPage.DisplayPromptAsync("Room", "Room");
+            var lecturer = await App.Current.MainPage.DisplayPromptAsync("Lecturer", "Lecturer");
+            await ServiceDatabase.AddTimeTable(name, timedate, room, lecturer);
+            await Refresh();
+        }
+
+        async Task Remove(Timetable timetable)
+        {
+            await ServiceDatabase.RemoveTimeTable(timetable.Id);
+            await Refresh();
         }
 
         //sets delay within async refresh awaitable
@@ -49,7 +64,14 @@ namespace MyAppProject.ViewModels
         {
             //if busy is true delays 2000
             IsBusy = true;
+
             await Task.Delay(2000);
+
+            Timetable.Clear();
+
+            var timetables = await ServiceDatabase.GetTimeTable();
+
+            Timetable.AddRange(timetables);
 
             //if busy is false nothing happens
             IsBusy= false;

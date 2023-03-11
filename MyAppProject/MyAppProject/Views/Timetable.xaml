@@ -4,13 +4,22 @@
              xmlns:mvvm="clr-namespace:MvvmHelpers;assembly=MvvmHelpers"
              xmlns:models="clr-namespace:MyAppProject.Models"
              xmlns:viewmodels="clr-namespace:MyAppProject.ViewModels"
-             x:Class="MyAppProject.Views.Timetable">
+             x:Class="MyAppProject.Views.Timetable"
+             x:Name = "MyTimetable">
 
     <ContentPage.BindingContext>
         <viewmodels:TimetableVM/>
     </ContentPage.BindingContext>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddCommand}"/>
+    </ContentPage.ToolbarItems>
+    
     <ListView
+        CachingStrategy="RecycleElement"
+        IsPullToRefreshEnabled="True"
+        IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+        RefreshCommand="{Binding RefreshCommand}"
         ItemsSource="{Binding Timetable}" 
         HasUnevenRows="True" 
         SeparatorVisibility="None"
@@ -20,6 +29,13 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem
+                            Command = "{Binding Source={x:Reference MyTimetable}, Path=BindingContext.RemoveCommand}"
+                            CommandParameter = "{Binding .}"
+                            IsDestructive = "True"
+                            Text = "Delete" />
+                    </ViewCell.ContextActions>
                     <Grid Padding="20">
 
                         <Frame CornerRadius="5" HasShadow="True">
@@ -42,6 +58,10 @@
                                            FontSize="Large"
                                            TextColor="Black"
                                            Text="{Binding Room}"/>
+                                    <Label VerticalOptions="Center"
+                                           FontSize="Large"
+                                           TextColor="Black"
+                                           Text="{Binding Id}"/>
                                 </StackLayout>
                             </StackLayout>
                         </Frame>
