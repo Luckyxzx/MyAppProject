@@ -10,7 +10,7 @@ namespace MyAppProject.Models
     //library contains simple attributes that can be use to control construction table which is used for my database
     public class Timetable
     {
-        //setting the publiv string for my variables
+        //setting the public string for my variables
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }

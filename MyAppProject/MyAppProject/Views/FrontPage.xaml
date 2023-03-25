@@ -7,8 +7,10 @@
              xmlns:viewmodels="clr-namespace:MyAppProject.ViewModels" 
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:local="http://xamarin.com/schemas/2020/toolkit"
+             Title="Main Page"
              BackgroundColor="White"
              >
+    <!-- binding viewmodel to each of my pages as the content within is needed-->
     <ContentPage.BindingContext>
         <viewmodels:FrontPageVM/>
     </ContentPage.BindingContext>
@@ -20,6 +22,8 @@
 
 
     <Grid>
+        <!-- by calling upon mediaelement it adds a video in the background which loops-->
+        <!-- video is copyright free of use-->
         <xct:MediaElement Source="ms-appx:///backgroundvideo.mp4" 
                       ShowsPlaybackControls="False"
                       IsLooping="True" 
@@ -28,6 +32,7 @@
                       VerticalOptions="FillAndExpand" 
                       HorizontalOptions="FillAndExpand"/>
 
+        <!-- sets background gradient to look pretty-->
         <BoxView>
             <BoxView.Background>
                 <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
@@ -41,12 +46,13 @@
             </BoxView.Background>
         </BoxView>
 
-
+        <!-- setting a gride which includes a heading and caption-->
         <Grid RowDefinitions="Auto, Auto, Auto" HeightRequest="220" Margin="30,30,30,100" RowSpacing="20" VerticalOptions="End">
             <CarouselView x:Name="cvOnboarding" IndicatorView="LandingIndicator" ItemsSource="{Binding Onboardings}" VerticalOptions="End">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Spacing="10">
+                            <!-- by using binding i can call upon the text required for heading and caption-->
                             <Label Text="{Binding Heading}" TextColor="Black" FontSize="25" FontAttributes="Bold" WidthRequest="250" HorizontalOptions="Start"/>
                             <Label Text="{Binding Caption}" TextColor="WhiteSmoke" FontSize="15" WidthRequest="250" HorizontalOptions="Start"/>
                         </StackLayout>

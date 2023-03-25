@@ -95,6 +95,7 @@
         Created a flyout header which shows a image of the usw logo
     -->
 
+    <!-- the slide out bar -->
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
             <Grid BackgroundColor="Transparent"
@@ -107,14 +108,17 @@
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
 
+    <!-- login page creation on the sidebar-->
     <ShellItem Route="LoginPage" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
     </ShellItem>
 
+    <!-- register page creation on the sidebare-->
     <ShellItem Route="RegPage" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate local:RegPage}"/>
     </ShellItem>
 
+    <!-- Sets main page with gradient on sidebar and creation on sidebar-->
     <FlyoutItem 
                 FlyoutDisplayOptions="AsMultipleItems">
         <Shell.FlyoutBackdrop>
@@ -136,6 +140,7 @@
 
     </FlyoutItem>
 
+    <!-- sets timetable page gradient for sidebar and creation of timetable within sidebar-->
     <FlyoutItem 
                 FlyoutDisplayOptions="AsMultipleItems">
         <Shell.FlyoutBackdrop>
@@ -157,17 +162,42 @@
 
     </FlyoutItem>
 
+    <!-- sets health page gradient for sidebar and creation of health and safety within sidebar-->
+    <FlyoutItem 
+                FlyoutDisplayOptions="AsMultipleItems">
+        <Shell.FlyoutBackdrop>
+            <LinearGradientBrush StartPoint="0,0"
+                               EndPoint="1,1">
+                <GradientStop Color="#abd4d6"
+                            Offset="0.1" />
+                <GradientStop Color="#f5b0a9"
+                            Offset="0.6" />
+                <GradientStop Color="#fd7a80"
+                            Offset="1.0" />
+            </LinearGradientBrush>
+        </Shell.FlyoutBackdrop>
+
+        <ShellContent Title="Health and Safety"
+                      Route="HealthSafety"
+                      Icon="icon_about.png"
+                      ContentTemplate="{DataTemplate views:HealthSafety}"/>
+
+    </FlyoutItem>
+
+    <!-- creation of about page within sidebar-->
     <MenuItem Text="About"
               IconImageSource="about.png"
               Command="{Binding AboutCommand}"
               CommandParameter="https://www.southwales.ac.uk/about" />
 
+    <!-- creation of help page within sidebar-->
     <MenuItem Text="Help"
               IconImageSource="help.png"
               Command="{Binding HelpCommand}"
               CommandParameter="https://advice.southwales.ac.uk/a2z/support-services" />
 
 
+    <!-- as the header of the sidebar adds a text saying USW along with month date and year-->
     <Shell.FlyoutFooterTemplate>
         <DataTemplate>
             <StackLayout>

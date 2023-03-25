@@ -28,6 +28,7 @@ namespace MyAppProject.ViewModels
 
         private List<Onboarding> GetOnboarding()
         {
+            //creates a list which when called upon it will display message
             return new List<Onboarding>
             {
                 new Onboarding { Heading = "USW Daily News", Caption = "Community Event on the 05/12/2022 attendance would be great" },
@@ -38,6 +39,7 @@ namespace MyAppProject.ViewModels
 
         public class Onboarding
         {
+            //creation of variable
             public string Heading { get; set; }
 
             public string Caption { get; set; }

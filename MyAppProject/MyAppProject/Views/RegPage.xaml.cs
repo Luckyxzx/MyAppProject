@@ -18,6 +18,7 @@ namespace MyAppProject.Views
             InitializeComponent();
         }
 
+        //bnasic async which once button clicked is called upon it will direct to login page
         private async void Button_Clicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");

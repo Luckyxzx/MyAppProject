@@ -18,3 +18,4 @@ D:\Repos\MyAppProject\MyAppProject\MyAppProject\bin\Debug\netstandard2.0\MyAppPr
 D:\Repos\MyAppProject\MyAppProject\MyAppProject\bin\Debug\netstandard2.0\MyAppProject.pdb
 D:\Repos\MyAppProject\MyAppProject\MyAppProject\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Repos\MyAppProject\MyAppProject\MyAppProject\obj\Debug\netstandard2.0\ref\MyAppProject.dll
+D:\Repos\MyAppProject\MyAppProject\MyAppProject\obj\Debug\netstandard2.0\Views\HealthSafety.xaml.g.cs

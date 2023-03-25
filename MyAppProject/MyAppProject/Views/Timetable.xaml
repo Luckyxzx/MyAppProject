@@ -5,8 +5,12 @@
              xmlns:models="clr-namespace:MyAppProject.Models"
              xmlns:viewmodels="clr-namespace:MyAppProject.ViewModels"
              x:Class="MyAppProject.Views.Timetable"
-             x:Name = "MyTimetable">
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Name = "MyTimetable"
+             BackgroundColor="White"
+             Title="Timetable">
 
+    <!-- binding viewmodel to each of my pages as the content within is needed-->
     <ContentPage.BindingContext>
         <viewmodels:TimetableVM/>
     </ContentPage.BindingContext>
@@ -14,7 +18,8 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddCommand}"/>
     </ContentPage.ToolbarItems>
-    
+
+    <!-- listview which lets user refresh page by pulling it down and showing circle-->
     <ListView
         CachingStrategy="RecycleElement"
         IsPullToRefreshEnabled="True"
@@ -23,9 +28,8 @@
         ItemsSource="{Binding Timetable}" 
         HasUnevenRows="True" 
         SeparatorVisibility="None"
-        SelectionMode="None"
-        BackgroundColor="Black"
-        >
+        SelectionMode="None">
+
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
@@ -42,29 +46,35 @@
                             <StackLayout>
                                 <Image Source="{Binding Image}"/>
                                 <StackLayout>
+                                    <!-- Binding name of lecture-->
                                     <Label VerticalOptions="Center"
                                            FontSize="Large"
                                            TextColor="Black"
                                            Text="{Binding Name}"/>
+                                    <!-- Binding label timedate-->
                                     <Label VerticalOptions="Center"
                                            FontSize="Large"
                                            TextColor="Red"
                                            Text="{Binding TimeDate}"/>
+                                    <!-- Binding lectuerer-->
                                     <Label VerticalOptions="Center"
                                            FontSize="Large"
                                            TextColor="Black"
                                            Text="{Binding Lecturer}"/>
+                                    <!-- Binding Room Num/Name-->
                                     <Label VerticalOptions="Center"
                                            FontSize="Large"
                                            TextColor="Black"
                                            Text="{Binding Room}"/>
-                                    <Label VerticalOptions="Center"
+                                    <!-- Label VerticalOptions="Center"
                                            FontSize="Large"
                                            TextColor="Black"
-                                           Text="{Binding Id}"/>
+                                           Text="{Binding Id}"
+                                    currently don't need to use id binding-->
                                 </StackLayout>
                             </StackLayout>
                         </Frame>
+
                     </Grid>
                 </ViewCell>
             </DataTemplate>

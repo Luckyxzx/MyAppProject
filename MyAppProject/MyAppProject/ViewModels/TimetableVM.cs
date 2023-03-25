@@ -45,6 +45,7 @@ namespace MyAppProject.ViewModels
 
         async Task Add()
         {
+            //its purpose is to set the the content
             var name = await App.Current.MainPage.DisplayPromptAsync("Name", "Name");
             var timedate = await App.Current.MainPage.DisplayPromptAsync("TimeDate", "TimeDate");
             var room = await App.Current.MainPage.DisplayPromptAsync("Room", "Room");
@@ -53,6 +54,7 @@ namespace MyAppProject.ViewModels
             await Refresh();
         }
 
+        //remove/delete
         async Task Remove(Timetable timetable)
         {
             await ServiceDatabase.RemoveTimeTable(timetable.Id);

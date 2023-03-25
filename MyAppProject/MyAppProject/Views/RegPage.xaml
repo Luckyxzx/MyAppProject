@@ -9,12 +9,14 @@
              x:Class="MyAppProject.Views.RegPage"
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="False"
+             Title="Register"
              >
 
 
     <Grid>
         <BoxView>
             <BoxView.Background>
+                <!-- Sets the gradient color for the background-->
                 <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
                     <GradientStop Color="#acd4d6"
                                   Offset="0"/>
@@ -26,14 +28,16 @@
             </BoxView.Background>
         </BoxView>
 
-
+        <!-- stack layout for holding the text by calling upon label and sticking an image to it-->
         <StackLayout Padding="100" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
             <Image Source="usw_logo.jpg" WidthRequest="200"/>
             <Label Text="Register Account&#10;" TextColor="White" FontSize="20"/>
             <Label Text="Username:" TextColor="Black"/>
+            <!-- takes the input of any text aslong as it's filled-->
             <Entry Placeholder="Username" />
             <Label Text="Password:" TextColor="Black" />
             <Entry Placeholder="Password"/>
+            <!-- takes the input of pass-->
             <Button Text="Register" Clicked="Button_Clicked" TextColor="White"/>
         </StackLayout>
 

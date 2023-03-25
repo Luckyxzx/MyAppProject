@@ -7,6 +7,12 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="0,10,0,5" />
+            </Style>
             <Color x:Key="Primary">#000</Color>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
