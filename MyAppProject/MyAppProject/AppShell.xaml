@@ -102,8 +102,8 @@
                   HeightRequest="150"
                   >
                 <Image Aspect="AspectFit"
-                       Source="usw_logo.png"
-                       Opacity="0.7"/>
+                       Source="USW_Full_Logo_Red_RGB.jpg"
+                       Opacity="0.8"/>
             </Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
@@ -133,6 +133,7 @@
             </LinearGradientBrush>
         </Shell.FlyoutBackdrop>
 
+        <!--sets title and route to main and frontpage which is the page destination, set an icon and change to front page-->
         <ShellContent Title="Main"
                       Route="FrontPage"
                       Icon="icon_about.png"
@@ -155,10 +156,34 @@
             </LinearGradientBrush>
         </Shell.FlyoutBackdrop>
 
+        
         <ShellContent Title="Timetable"
                       Route="Timetable"
                       Icon="icon_about.png"
                       ContentTemplate="{DataTemplate views:Timetable}"/>
+
+    </FlyoutItem>
+
+    <!-- sets Map page gradient for sidebar and creation of map within sidebar-->
+    <FlyoutItem 
+                FlyoutDisplayOptions="AsMultipleItems">
+        <Shell.FlyoutBackdrop>
+            <LinearGradientBrush StartPoint="0,0"
+                               EndPoint="1,1">
+                <GradientStop Color="#abd4d6"
+                            Offset="0.1" />
+                <GradientStop Color="#f5b0a9"
+                            Offset="0.6" />
+                <GradientStop Color="#fd7a80"
+                            Offset="1.0" />
+            </LinearGradientBrush>
+        </Shell.FlyoutBackdrop>
+
+        <!--sets title and route to map which is the page destination, set an icon and change to map page-->
+        <ShellContent Title="Map"
+                      Route="Map"
+                      Icon="icon_about.png"
+                      ContentTemplate="{DataTemplate views:Map}"/>
 
     </FlyoutItem>
 
@@ -182,19 +207,56 @@
                       Icon="icon_about.png"
                       ContentTemplate="{DataTemplate views:HealthSafety}"/>
 
+
     </FlyoutItem>
+
+    <!-- sets forum page gradient for sidebar and creation of forum within sidebar-->
+    <FlyoutItem 
+                FlyoutDisplayOptions="AsMultipleItems">
+        <Shell.FlyoutBackdrop>
+            <LinearGradientBrush StartPoint="0,0"
+                               EndPoint="1,1">
+                <GradientStop Color="#abd4d6"
+                            Offset="0.1" />
+                <GradientStop Color="#f5b0a9"
+                            Offset="0.6" />
+                <GradientStop Color="#fd7a80"
+                            Offset="1.0" />
+            </LinearGradientBrush>
+        </Shell.FlyoutBackdrop>
+
+        <ShellContent Title="Forum"
+                      Route="Forum"
+                      Icon="icon_about.png"
+                      ContentTemplate="{DataTemplate views:Forum}"/>
+
+
+    </FlyoutItem>
+
+
+    <!-- creation of library page within sidebar-->
+    <MenuItem Text="Library"
+                  IconImageSource="icon_about.png"
+                  Command="{Binding HelpCommand}"
+                  CommandParameter="https://library.southwales.ac.uk/" />
+
+
 
     <!-- creation of about page within sidebar-->
     <MenuItem Text="About"
-              IconImageSource="about.png"
+              IconImageSource="question_icon.png"
               Command="{Binding AboutCommand}"
               CommandParameter="https://www.southwales.ac.uk/about" />
 
     <!-- creation of help page within sidebar-->
+    <!-- the image is created by the owner of this code with the app paint.net -->
     <MenuItem Text="Help"
-              IconImageSource="help.png"
+
+              IconImageSource="question_icon.png"
               Command="{Binding HelpCommand}"
               CommandParameter="https://advice.southwales.ac.uk/a2z/support-services" />
+
+
 
 
     <!-- as the header of the sidebar adds a text saying USW along with month date and year-->

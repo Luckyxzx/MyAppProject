@@ -688,3 +688,8 @@ D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\android\as
 D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\android\assets\System.Buffers.dll
 D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\android\assets\System.Memory.dll
 D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\android\assets\System.Runtime.CompilerServices.Unsafe.dll
+D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\res\drawable\uswmap.jpg
+D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\res\drawable\usw_full_logo_red_rgb.jpg
+D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\res\drawable\question_mark.png
+D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\res\drawable\question_icon.png
+D:\Repos\MyAppProject\MyAppProject\MyAppProject.Android\obj\Debug\120\android\assets\Newtonsoft.Json.dll

@@ -23,16 +23,6 @@ namespace MyAppProject.Views
             InitializeComponent();
         }
 
-        //async void to stay logged in after button is pressed and direct to front page if true
-        //protected override async void OnAppearing()
-        //{
-            //base.OnAppearing();
-            //var loggedin = true;
-            //if(true)
-                //await Shell.Current.GoToAsync($"//{nameof(FrontPage)}");
-
-        //}
-
         //direct to front page when button is pressed
         private async void SignInButton(object sender, EventArgs e)
         {

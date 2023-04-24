@@ -42,13 +42,17 @@
       "frameworks": {
         "monoandroid12.0": {
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Xamarin.CommunityToolkit": {
               "target": "Package",
               "version": "[2.0.5, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.7.3, )"
+              "version": "[1.7.5, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
@@ -109,6 +113,10 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Refractored.MvvmHelpers": {
               "target": "Package",
               "version": "[1.6.2, )"
@@ -119,7 +127,7 @@
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.7.3, )"
+              "version": "[1.7.5, )"
             },
             "Xamarin.Forms": {
               "target": "Package",

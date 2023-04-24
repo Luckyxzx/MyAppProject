@@ -30,7 +30,7 @@
 
         <!-- stack layout for holding the text by calling upon label and sticking an image to it-->
         <StackLayout Padding="100" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
-            <Image Source="usw_logo.jpg" WidthRequest="200"/>
+            <Image Source="USW_Full_Logo_Red_RGB.jpg" WidthRequest="200" Opacity="0.9"/>
             <Label Text="Register Account&#10;" TextColor="White" FontSize="20"/>
             <Label Text="Username:" TextColor="Black"/>
             <!-- takes the input of any text aslong as it's filled-->

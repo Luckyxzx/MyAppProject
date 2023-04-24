@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyAppProject.Views.Forum"
+             xmlns:controls="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Core"
+             Title="Forum"
+             >
+
+
+        <!-- a simple stacklayout which gets me inputs of peoples opinion with their info-->
+    <StackLayout>
+
+        <!-- sets background gradient to look pretty-->
+        <BoxView>
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="Transparent"
+                                      Offset="0"/>
+                    <GradientStop Color="#f5b0a9"
+                                      Offset="0.9"/>
+                    <GradientStop Color="#fd7a80"
+                                      Offset="1" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+        <!-- sets the label text to whatever is contained within text-->
+        <Label Text="USW Forum Community" FontSize="Medium" HorizontalOptions="Center" TextColor="Red"/>
+        <!-- retrieves data when placeholder is inputted-->
+        <Entry x:Name="TitleEntry" Placeholder="Title" />
+        <!-- retrieves data when placeholder is inputted-->
+        <Entry x:Name="CreatorEntry" Placeholder="Enter Name" />
+        <!-- retrieves data when placeholder is inputted-->
+        <Editor x:Name="MessageEditor" Placeholder="Enter message" />
+        <!-- retrieves data when button is clicked-->
+        <Button Text="Post" Clicked="OnTopClicked" />
+
+        <!-- binding ItemsSource to Topics and SelectedItem to SelectedTopic, this will control and display a list of items that are contained in the collection-->
+        <ListView x:Name="TopicsListView"
+                      ItemsSource="{Binding Topics}"
+                      SelectedItem="{Binding SelectedTopic}"
+                      HasUnevenRows="true">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <!-- Display a delete button when hold is applied to the database message to delete-->
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete" Clicked="OnDeleteTopicClicked" CommandParameter="{Binding .}" />
+                        </ViewCell.ContextActions>
+                        <!-- display the message which is saved from the user input-->
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Title}" FontSize="Large" />
+                            <Label Text="{Binding Creator}" FontSize="Small" />
+                            <Label Text="{Binding Message}" FontSize="Small" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+
+
+
+</ContentPage>

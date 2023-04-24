@@ -9916,12 +9916,16 @@ public final class R {
     public static final int notification_tile_bg=0x7f07008d;
     public static final int notify_panel_notification_icon_bg=0x7f07008e;
     public static final int preference_list_divider_material=0x7f07008f;
-    public static final int test_custom_background=0x7f070090;
-    public static final int tooltip_frame_dark=0x7f070091;
-    public static final int tooltip_frame_light=0x7f070092;
-    public static final int usw_logo=0x7f070093;
-    public static final int usw_navbar=0x7f070094;
-    public static final int xamarin_logo=0x7f070095;
+    public static final int question_icon=0x7f070090;
+    public static final int question_mark=0x7f070091;
+    public static final int test_custom_background=0x7f070092;
+    public static final int tooltip_frame_dark=0x7f070093;
+    public static final int tooltip_frame_light=0x7f070094;
+    public static final int usw_full_logo_red_rgb=0x7f070095;
+    public static final int usw_logo=0x7f070096;
+    public static final int usw_navbar=0x7f070097;
+    public static final int uswmap=0x7f070098;
+    public static final int xamarin_logo=0x7f070099;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

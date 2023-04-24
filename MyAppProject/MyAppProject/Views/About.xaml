@@ -8,10 +8,12 @@
     <!-- Basic Content page-->
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="About page directed to website"
+            <!-- sets a label which gives slight info on page-->
+            <Label Text="About Page"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
+            <!-- sets a video source which plays background video with modification-->
             <xct:MediaElement Source="ms-appx:///backgroundvideo.mp4" 
                           ShowsPlaybackControls="True"
                           IsLooping="True" 

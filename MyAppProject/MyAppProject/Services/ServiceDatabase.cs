@@ -37,7 +37,6 @@ namespace MyAppProject.Services
         public static async Task AddTimeTable(string name, string timedate, string room, string lecturer)
         {
             await Init();
-            var image = "usw_logo.png";
             var timetable = new Timetable
             {
                 Name = name,

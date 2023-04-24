@@ -26,7 +26,7 @@
         </BoxView>
         <!-- basic content page which takes input from user but does not store-->
         <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="10">
-            <Image Source="usw_logo.jpg" WidthRequest="500" />
+            <Image Source="USW_Full_Logo_Red_RGB.jpg" WidthRequest="300" Opacity="0.9" />
             <Label x:Name="Lab_User"  Text="Username/Email:" FontSize="Title"/>
             <Entry x:Name="En_User" Placeholder="Username"/>
             <Label x:Name="Lab_Pass" Text="Password:" FontSize="Title"/>
