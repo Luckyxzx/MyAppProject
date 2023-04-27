@@ -11,7 +11,7 @@ using MyAppProject.Views;
 
 namespace MyAppProject.Helpers
 {
-    // provides helper methods for SQLite database
+    //uses the SQLite lib to create an engine which can be used for the forum page
     public class DBHelper
     {
         private readonly SQLiteAsyncConnection database;
@@ -32,7 +32,7 @@ namespace MyAppProject.Helpers
             return database.Table<Topic>().ToListAsync();
         }
 
-        // it either updates or inserts top obj to a topic table all dependent on if it already exists or not, also return used rows
+        // it either updates or inserts topic obj to a topic table all dependent on if it already exists or not, also return used rows
         public Task<int> SaveTopicAsync(Topic topic)
         {
             if (topic.Id != 0)

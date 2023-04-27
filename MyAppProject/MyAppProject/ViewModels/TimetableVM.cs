@@ -24,9 +24,9 @@ namespace MyAppProject.ViewModels
         public ObservableRangeCollection<Grouping<string, Timetable>> TimetableGroups { get; }
         //pulls data and wait 2 sec async
         public AsyncCommand RefreshCommand { get; }
-        //
+        //add command
         public AsyncCommand AddCommand { get; }
-        //
+        //removes timetable obj
         public AsyncCommand<Timetable> RemoveCommand { get; }  
 
         public TimetableVM()
@@ -34,27 +34,33 @@ namespace MyAppProject.ViewModels
             //title
             Title = "The Timetable";
 
+            //a collection that is able to notify any new items added remove or replaced
             Timetable = new ObservableRangeCollection<Timetable>();
             TimetableGroups = new ObservableRangeCollection<Grouping<string, Timetable>>();
 
             //creates a new async command that refresh
             RefreshCommand = new AsyncCommand(Refresh);
+            //creates a new async command of add
             AddCommand = new AsyncCommand(Add);
+            //async command of remove timetable
             RemoveCommand = new AsyncCommand<Timetable>(Remove);
         }
 
         async Task Add()
         {
             //its purpose is to set the the content
+            //creates prompt which asks for user input and stores in corresponding name
             var name = await App.Current.MainPage.DisplayPromptAsync("Name", "Name");
             var timedate = await App.Current.MainPage.DisplayPromptAsync("TimeDate", "TimeDate");
             var room = await App.Current.MainPage.DisplayPromptAsync("Room", "Room");
             var lecturer = await App.Current.MainPage.DisplayPromptAsync("Lecturer", "Lecturer");
+            //after inputs are obtained from user it adds the information to a database
             await ServiceDatabase.AddTimeTable(name, timedate, room, lecturer);
+            //refreshes UI
             await Refresh();
         }
 
-        //remove/delete
+        //remove/delete timetable
         async Task Remove(Timetable timetable)
         {
             await ServiceDatabase.RemoveTimeTable(timetable.Id);

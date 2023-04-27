@@ -15,10 +15,10 @@ namespace MyAppProject.Models
         public int Id { get; set; }
 
         //sets a max length of 250
-        [MaxLength(250)]
+        [MaxLength(150)]
         public string Title { get; set; }
         //sets a max length of 250
-        [MaxLength(250)]
+        [MaxLength(150)]
         public string Creator { get; set; }
         //sets a max length of 1000 since message is usually longer
         [MaxLength(1000)]

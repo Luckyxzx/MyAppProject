@@ -66,11 +66,6 @@
                                            FontSize="Large"
                                            TextColor="Black"
                                            Text="{Binding Room}"/>
-                                    <!-- Label VerticalOptions="Center"
-                                           FontSize="Large"
-                                           TextColor="Black"
-                                           Text="{Binding Id}"
-                                    currently don't need to use id binding-->
                                 </StackLayout>
                             </StackLayout>
                         </Frame>

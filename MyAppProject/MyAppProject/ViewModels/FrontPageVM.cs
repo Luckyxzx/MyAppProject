@@ -18,12 +18,13 @@ namespace MyAppProject.ViewModels
     //MVMMHelper  sets to inherit from VMBase which it inherits from BaseViewModel
     public class FrontPageVM : VMBase
     {
-
+        //sets
         public FrontPageVM()
         {
             Onboardings = GetOnboarding();
         }
 
+        //get and set onboardings
         public List<Onboarding> Onboardings { get; set; }
 
         private List<Onboarding> GetOnboarding()
