@@ -1,4 +1,4 @@
-# Indivudla Project
+# Individual Project
  University Of Southwales Science Mobile Application
 
 The project uses MvvmHelpers which is created by James Montemagno https://www.nuget.org/packages/Refractored.MvvmHelpers
@@ -14,3 +14,5 @@ With the help of NuGet these are the solutions that I installed onto the project
 These are the Extensions that I have got within my project. (Image Below)
 
 ![Normal extensions](https://user-images.githubusercontent.com/65267687/234363723-b7732663-c6f4-4d30-bd92-5ddf34b42e68.jpg)
+
+
